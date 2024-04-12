@@ -1,5 +1,6 @@
 package com.itemsapi.itemsapi.item;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.itemsapi.itemsapi.item.ItemRequestDTO;
 
 @Getter @Setter
 @AllArgsConstructor
@@ -24,5 +26,12 @@ public class Item {
     Integer quantity;
     String image;
 
+    public Item(ItemRequestDTO data) {
+        this.productName = data.productName;
+        this.description = data.description;
+        this.price = data.price;
+        this.quantity = data.quantity;
+        this.image = data.image;
+    }
 
 }
